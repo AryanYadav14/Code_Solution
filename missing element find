@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int A[] = {1, 2, 4, 5};
+    int n = 4;
+
+    int comp[100];
+    int k = 0;
+
+    // create comparison array [1..5]
+    for (int i = 1; i <= 5; i++) {
+        comp[k] = i;
+        k++;
+    }
+
+    // compare values, not indices blindly
+    int i = 0, j = 0;
+
+    while (i < n && j < 5) {
+        if (A[i] == comp[j]) {
+            i++;
+            j++;
+        } else {
+            cout << comp[j] << " ";
+            break;
+        }
+    }
+
+    return 0;
+}
+// Output: 3  
