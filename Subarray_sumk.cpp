@@ -1,29 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int findAllSubarraysWithGivenSum(vector<int>& arr, int k) {
-    map<int, int> mpp;
-    mpp[0] = 1;
+int longestSubarraySumK(vector<int>& nums, int k)
+{
+    unordered_map<int, int> mp;
 
-    int preSum = 0, cnt = 0;
+    int sum = 0;
+    int maxLen = 0;
 
-    for(int i = 0; i < arr.size(); i++) {
-        preSum += arr[i];
-        int remove = preSum - k;
-        cnt += mpp[remove];
-        mpp[preSum]++;
+    mp[0] = -1;
+
+    for(int i = 0; i < nums.size(); i++)
+    {
+        sum += nums[i];
+
+        if(mp.find(sum - k) != mp.end())
+        {
+            int len = i - mp[sum - k];
+            maxLen = max(maxLen, len);
+        }
+
+        if(mp.find(sum) == mp.end())
+        {
+            mp[sum] = i;
+        }
     }
 
-    return cnt;
-}
-
-int main() {
-    vector<int> arr = {1, 2, 3, -3, 1, 1, 1, 4, 2, -3};
-    int k;
-    cin >> k;
-
-    int result = findAllSubarraysWithGivenSum(arr, k);
-    cout << result << endl;
-
-    return 0;
+    return maxLen;
 }
