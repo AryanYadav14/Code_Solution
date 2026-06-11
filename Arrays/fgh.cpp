@@ -1,0 +1,95 @@
+#include<iostream>
+using namespace std;
+
+
+ 
+void printf2(int x){
+    for(int i=x;i>=1;i--){
+        for(int j = 1; j<=i;j++){
+            cout << "*";
+        }
+        cout << endl;
+    }
+}
+
+void printf3(int z){
+    for(int i=1;i<=z;i++){
+        for(int j=0;j<=i;j++){
+            int k;
+            cout << i << " ";
+            i = i+1;
+        }
+        cout << endl;
+    }
+}
+
+
+void printf4(int l){
+    for (int i = 5; i >= 1; i--) {     
+        for (int j = 0; j < i; j++) {   
+            cout << char('A' + j);
+        }
+        cout << endl;
+    }
+}
+
+
+
+void printf5(int n){
+    for (int i = 1; i <= n; i++) {
+
+    // left stars
+        for (int j = 1; j <= i; j++) {
+            cout << "*";
+        }
+
+    // middle spaces
+        for (int j = 1; j <= 2*n - 2*i; j++) {
+            cout << " ";
+        }
+
+    // right stars
+        for (int j = 1; j <= i; j++) {
+            cout << "*";
+        }
+
+    cout << endl;
+    }
+}
+
+
+void printf7(int n){
+    for (int i = 0; i < n; i++) {
+
+    // left stars
+        for (int j = 0; j <= n - i - 1; j++) {
+            cout << "*";
+        }
+
+    // middle spaces
+        for (int j = 0; j < 2*i; j++) {
+            cout << " ";
+        }
+
+    // right stars
+        for (int j = 0; j <= n - i - 1; j++) {
+            cout << "*";
+        }
+
+        cout << endl;
+    }
+
+}
+
+
+
+int main(){
+
+    int n1,n2;
+    n1=5;
+    n2=5;
+    printf7(n1);
+    printf5(n2);
+   
+    return 0;
+}
