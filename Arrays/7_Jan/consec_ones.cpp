@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+    int A[] = {1,1,0,1,1,1,0,0,1,1};
+    int n = sizeof(A)/sizeof(A[0]);
+
+    int maxi = 0;
+    int count = 0;
+
+    for(int i=0;i<n;i++){
+        if(A[i] == 1){
+            count++;
+            maxi = max(maxi,count);
+        }
+        else{
+            count = 0;
+        }
+    }
+    cout << maxi << endl;
+    return 0;
+}
