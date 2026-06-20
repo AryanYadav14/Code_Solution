@@ -1,3 +1,18 @@
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node* next;
+
+    Node(int x)
+    {
+        data = x;
+        next = NULL;
+    }
+};
+
 Node* removeNthFromEnd(Node* head, int n)
 {
     Node* fast = head;

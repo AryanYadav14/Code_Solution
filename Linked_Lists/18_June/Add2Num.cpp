@@ -55,32 +55,3 @@ Node* addTwoNumbers(Node* head1, Node* head2)
 
     return dummy->next;
 }
-
-void printList(Node* head)
-{
-    while (head)
-    {
-        cout << head->data << " ";
-        head = head->next;
-    }
-    cout << endl;
-}
-
-int main()
-{
-    // 342
-    Node* head1 = new Node(2);
-    head1->next = new Node(4);
-    head1->next->next = new Node(3);
-
-    // 465
-    Node* head2 = new Node(5);
-    head2->next = new Node(6);
-    head2->next->next = new Node(4);
-
-    Node* ans = addTwoNumbers(head1, head2);
-
-    printList(ans);
-
-    return 0;
-}
